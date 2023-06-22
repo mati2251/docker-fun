@@ -7,6 +7,6 @@ RUN <<EOF
 EOF
 
 
-COPY named.conf.options /etc/bind/named.conf.options
+COPY config-files /etc/bind/
 
 CMD service named restart && tail -F /var/log/lastlog
