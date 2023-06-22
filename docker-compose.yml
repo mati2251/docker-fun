@@ -1,0 +1,14 @@
+version: 2.19.0
+services: 
+    dns:
+        build: dns-server/.
+        dns: 127.0.0.1
+        networks: 
+            webnet:
+                ipv4_address: 10.1.0.2
+networks:
+    webnet:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 10.1.0.0/24
